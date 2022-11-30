@@ -1,5 +1,7 @@
 package com.ryanwon.redissontestground.test;
 
+
+
 import com.ryanwon.redissontestground.test.config.RedissonConfig;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -20,5 +22,13 @@ public abstract class BaseTest {
     @AfterAll
     public void shutdown() {
         this.client.shutdown();
+    }
+
+    protected void sleep(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
