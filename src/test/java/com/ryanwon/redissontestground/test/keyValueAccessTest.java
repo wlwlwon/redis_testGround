@@ -10,6 +10,9 @@ import java.util.concurrent.TimeUnit;
 
 public class keyValueAccessTest extends BaseTest{
 
+    /**
+     * redis 연동 && 만료시간
+     */
     @Test
     public void keyValueAccessTest() {
         RBucketReactive<String> bucket = this.client.getBucket("user:1:name", StringCodec.INSTANCE);
